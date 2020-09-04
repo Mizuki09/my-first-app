@@ -1,0 +1,176 @@
+body {
+  background-position: center;
+  color: #000;
+  background-image: url("image/double-bubble-outline.png");
+}
+
+li {
+    list-style: none;
+}
+
+.navbar-laravel {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.paging-system {
+  margin: 0 auto 0 auto;
+}
+
+.navbar-brand {
+  color: #000000 !important;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#error-massage {
+  list-style: none;
+}
+
+.navbar-brand:hover {
+  opacity: 0.7;
+}
+
+.nav-link {
+  color: #000 !important;
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+.table-dark {
+  color: #000;
+}
+
+.list-group-item {
+  border-color: #000;
+  background-color: #000;
+}
+
+.login-box {
+  background-color: white;
+}
+
+.login-header {
+  background-color: white;
+}
+
+.login-body {
+  background-color: white;
+}
+
+.navbar-nav li {
+  list-style: none;
+}
+
+.main-aria {
+  margin: 0 2em 5em 2em;
+}
+
+ img {
+    width: 560px;
+    height: 315px;
+}
+
+.flex-container {
+  width: 80%;
+  margin: 7% auto 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.category {
+  text-align: center;
+}
+
+.category a {
+  color: #cfeeee;
+  font-size: 30px;
+  text-shadow: 1px 2px 3px #1b181b;
+}
+
+#url-warning {
+  color: #dd4c49;
+}
+
+.flex-container2 {
+  width: 80%;
+  margin: 0 auto 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.main-aria2 {
+  display: flex;
+  margin: 20em auto 0 auto;
+  width: 80%;
+  height: 315px;
+  background-color: #eff6fc;
+}
+
+.video-delete {
+  width: 80%;
+  margin: 0 auto 0 auto;
+}
+
+.main-log {
+  height: 100%;
+  flex: 1;
+}
+
+.new-comment {
+  text-align: right;
+  margin: 0 auto 0 auto;
+  width: 80%;
+}
+
+.comments {
+  padding-left: 20px;
+  flex: 1;
+  /*width: 100%;*/
+  overflow: auto;
+  height: 100%;
+  list-style: none;
+}
+
+.comments li {
+  font-size: 16px;
+  margin: 15px 0 15px 7px;
+}
+
+.new-aria {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto 0 auto;
+}
+
+.post-video {
+  text-align: right;
+  width: 60%;
+  margin: 0 auto 0 auto;
+}
+
+.post-text {
+  width: 100%;
+  max-width: 340px;
+}
+
+.post-aria {
+    margin: 40px 0;
+}
+
+.delete-button {
+  width: 80%;
+  margin: 0 auto 0 auto;
+}
+
+.comment_body {
+  font-size: 17px;
+  font-family: "Fira Code", serif;
+}
+
+.delete-comment {
+  float: right;
+}
