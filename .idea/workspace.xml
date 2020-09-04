@@ -175,6 +175,26 @@
       <recent name="C:\Users\kaniq\OneDrive\ドキュメント\docker-compose-laravel" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="docker-compose.yml.db: Compose デプロイメント" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="db" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yml.db: Compose デプロイメント" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -186,7 +206,7 @@
       <workItem from="1599188978407" duration="880000" />
       <workItem from="1599189889508" duration="734000" />
       <workItem from="1599190666619" duration="1058000" />
-      <workItem from="1599194691394" duration="1909000" />
+      <workItem from="1599194691394" duration="10961000" />
     </task>
     <servers />
   </component>
@@ -204,5 +224,15 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="731" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599208540427">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="731" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599208540427" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1599209563545">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599209563545" />
   </component>
 </project>
