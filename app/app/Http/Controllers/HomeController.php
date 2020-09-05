@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use GuzzleHttp\Exception\GuzzleException;
+use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use App\Video;
 
@@ -19,8 +21,8 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @return Renderable
+     * @throws GuzzleException
      */
     public function index()
 
