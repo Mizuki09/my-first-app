@@ -20,18 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc777e43-33b5-4925-b761-f81fbf3391af" name="デフォルト変更リスト" comment="">
-      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/app/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/docker-laravel/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/docker-laravel/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/docker-laravel/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/docker-laravel/infrastructure/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/docker-laravel/infrastructure/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/docker-laravel/infrastructure/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/docker-laravel/infrastructure/docker/nginx/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/docker-laravel/infrastructure/docker/nginx/default.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/docker-laravel/infrastructure/docker/php/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/docker-laravel/infrastructure/docker/php/php-fpm.d/zzz-www.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/docker-laravel/infrastructure/docker/php/php.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +34,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/app" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -169,6 +160,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -207,7 +199,9 @@
       <workItem from="1599188978407" duration="880000" />
       <workItem from="1599189889508" duration="734000" />
       <workItem from="1599190666619" duration="1058000" />
-      <workItem from="1599194691394" duration="20868000" />
+      <workItem from="1599194691394" duration="21921000" />
+      <workItem from="1599225546287" duration="60000" />
+      <workItem from="1599230549315" duration="594000" />
     </task>
     <servers />
   </component>
@@ -251,6 +245,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1293" height="578" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599224163302" />
+    <state x="468" y="164" key="SettingsEditor" timestamp="1599225603049">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="468" y="164" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599225603049" />
     <state x="240" y="0" width="349" height="1047" key="dock-window-1" timestamp="1599222244994">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
