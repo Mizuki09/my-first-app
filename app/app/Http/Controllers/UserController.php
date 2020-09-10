@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function edit($id) {
+
         $item = User::find($id);
         $this->authorize('update',$item);
-        return  view('auth/edit',compact('item'));
+        return  view('edit',compact('item'));
+
     }
 }

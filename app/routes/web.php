@@ -24,7 +24,7 @@ Route::post('/category/commentCreate', 'CommentController@commentAdd')->middlewa
 //コメントの削除
 Route::post('/category/commentDelete', 'CommentController@commentDelete')->middleware('auth');
 //ユーザーデータの編集
-Route::get('/{id}','UserController@edit');
+Route::get("/edit/{id}",'UserController@edit');
 
 
 

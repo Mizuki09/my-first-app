@@ -55,7 +55,7 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             @csrf
                                         </form>
-                                        <a class="dropdown-item" href="{{ url(Auth::user()->id) }}">
+                                        <a class="dropdown-item" href="{{ url("edit".'/'.Auth::user()->id) }}">
                                             {{ __('編集') }}
                                         </a>
 
