@@ -38,7 +38,7 @@ class HomeController extends Controller
         ];
 //        カテゴリ毎に一番投稿時間の新しいものをTOPに表示させる
         foreach ($category as $item) {
-            $response[] = Video::where('category' , "$item[0]")->get()->sortbyDesc('created_at')->first();
+            $response[] = Video::TopEqual("$item[0]")->get()->sortbyDesc('created_at')->first();
         }
 
         return view('index' , compact('response' , 'category'));
