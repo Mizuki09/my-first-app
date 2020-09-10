@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use GuzzleHttp\Exception\GuzzleException;
+use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use App\Video;
 
@@ -19,8 +21,8 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @return Renderable
+     * @throws GuzzleException
      */
     public function index()
 
@@ -36,7 +38,7 @@ class HomeController extends Controller
         ];
 //        カテゴリ毎に一番投稿時間の新しいものをTOPに表示させる
         foreach ($category as $item) {
-            $response[] = Video::where('category' , "$item[0]")->get()->sortbyDesc('created_at')->first();
+            $response[] = Video::TopEqual("$item[0]")->get()->sortbyDesc('created_at')->first();
         }
 
         return view('index' , compact('response' , 'category'));

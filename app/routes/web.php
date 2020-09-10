@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 //カテゴリ別の動画一覧
 Route::get('/category/{category}', 'AppController@index');
 //APIを使った動画の追加
@@ -27,6 +23,10 @@ Route::post('/category/videoDelete', 'VideoController@videoDelete')->middleware(
 Route::post('/category/commentCreate', 'CommentController@commentAdd')->middleware('auth');
 //コメントの削除
 Route::post('/category/commentDelete', 'CommentController@commentDelete')->middleware('auth');
+//ユーザーデータの編集画面の表示
+Route::get("/edit/{id}",'UserController@edit');
+//ユーザーデータの編集
+Route::post("/update",'UserController@update');
 
 
 
