@@ -13,4 +13,13 @@ class UserController extends Controller
         return  view('edit',compact('item'));
 
     }
+
+    public function update(Request $request) {
+        User::find($request->id)->update([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'password'=>$request->password
+        ]);
+        return redirect('/');
+    }
 }
