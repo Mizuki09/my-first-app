@@ -47,7 +47,7 @@
 
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ url("edit".'/'.Auth::user()->id) }}">
-                                            {{ __('編集') }}
+                                            {{ __('登録情報の編集') }}
                                         </a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
