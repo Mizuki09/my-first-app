@@ -10,4 +10,9 @@ class AdminController extends Controller
         $items = User::paginate(20);
         return view('admin/index',compact('items'));
     }
+
+    public function edit($id){
+        $item = User::find($id);
+        return view('admin/edit',compact('item'));
+    }
 }

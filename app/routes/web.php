@@ -33,6 +33,8 @@ Route::post("/update",'UserController@update');
 Route::group(['middleware'=>['auth','can:admin']],function (){
 //    管理者画面
     Route::get('/admin','AdminController@index');
+//    ユーザーデータの個別編集画面
+    Route::get("/admin/{id}",'AdminController@edit');
 });
 
 
