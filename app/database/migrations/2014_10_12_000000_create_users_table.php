@@ -19,6 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            //            roleは管理レベル、数が小さいほど権限は大きい
+            $table->integer('role')->default(10);
+            $table->integer('school')->default(0);
+
+
             $table->rememberToken();
             $table->timestamps();
         });

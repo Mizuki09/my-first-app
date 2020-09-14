@@ -29,6 +29,13 @@ Route::get("/edit/{id}",'UserController@edit');
 Route::post("/update",'UserController@update');
 
 
+//管理者
+Route::group(['middleware'=>['auth','can:admin']],function (){
+//    管理者画面
+    Route::get('/admin','AdminController@index');
+});
+
+
 
 Auth::routes();
 
