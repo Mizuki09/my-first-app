@@ -158,18 +158,18 @@ img {
   float: right;
 }
 
-.user-box li {
-
+.user-box p {
+    margin: 15px 0 0 30px;
     list-style: none;
     font-size: 16px;
-    margin-top: 30px;
 }
 
 .user-box {
     background-color: #d3d3e7;
-    margin: 30px;
+    margin: 15px;
     width: 300px;
-    height: 250px;
+    height: 220px;
+
 }
 
 .user-flex {
@@ -182,6 +182,14 @@ img {
 .user-item {
     text-align: center;
     margin-right: 20px;
+
+}
+
+.user-box label {
+
+    list-style: none;
+    font-size: 16px;
+    margin: 15px 0 0 30px;
 }
 
 .user-edit {

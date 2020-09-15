@@ -29,12 +29,14 @@ Route::get("/edit/{id}",'UserController@edit');
 Route::post("/update",'UserController@update');
 
 
-//管理者
+//管理者のみ利用可能
 Route::group(['middleware'=>['auth','can:admin']],function (){
 //    管理者画面
     Route::get('/admin','AdminController@index');
 //    ユーザーデータの個別編集画面
     Route::get("/admin/{id}",'AdminController@edit');
+//    ユーザーデータ編集送信
+    Route::post("/admin/edit/{id}",'AdminController@update');
 });
 
 

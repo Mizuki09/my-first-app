@@ -5,13 +5,23 @@
     <div class="user-flex">
     @foreach($items as $item)
         <div class="user-box">
-            <ul>
-                <li><span class="user-item">ＩＤ</span>{{$item->id}}</li>
-                <li><span class="user-item">名前</span>{{$item->name}}</li>
-                <li><span class="user-item">学校</span>{{$item->school}}</li>
-                <li><span class="user-item">権限</span>{{$item->role}}</li>
-            </ul>
-            <li><a href="/admin/{{$item->id}}">編集</a></li>
+            <p>ＩＤ：{{$item->id}}</p>
+            <p>名前：{{$item->name}}</p>
+            <form method="post" action={{"/admin/edit/$item->id"}}>
+                <label for="school">学校：{{$item->school}}</label>
+                <input id="school" type="text" name="school">
+                <label for="role">権限：{{$item->role}}</label>
+                <select id="role" name="role">
+                    <option value="admin">admin</option>
+                    <option value="general">general</option>
+                </select>
+                @csrf
+                <div class="user-item">
+                    <button type="submit" class="btn btn-primary">
+                        {{ __('更新') }}
+                    </button>
+                </div>
+            </form>
         </div>
     @endforeach
     </div>
