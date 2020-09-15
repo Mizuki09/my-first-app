@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 use App\Http\Requests\VideoRequest;
+use App\User;
 use Illuminate\Http\Request;
 use App\Video;
 use App\Comment;
+
 class VideoController extends Controller
 {
 //    新しく動画を追加
@@ -24,6 +26,16 @@ class VideoController extends Controller
         $category = $request->category;
 
 //        送り元のurlへリダイレクト
-        return redirect("/category/$category");
+        return redirect('/');
+    }
+//    公開範囲の変更
+    public function displayEdit(Request $request,$id) {
+        $item = User::find($id);
+        $this->authorize('update',$item);
+
+        Video::find($request->video_id)->update([
+            'display'=>$request->display,
+        ]);
+        return redirect("/video/$id");
     }
 }

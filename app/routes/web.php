@@ -15,16 +15,21 @@
 Route::get('/category/{category}', 'AppController@index');
 //APIを使った動画の追加
 Route::post('/category/apiCreate', 'ApiController@apiVideo')->middleware('auth');
-//動画の追加
+//動画の投稿
 Route::post('/category/videoCreate', 'VideoController@videoAdd')->middleware('auth');
 //動画の削除
 Route::post('/category/videoDelete', 'VideoController@videoDelete')->middleware('auth');
+Route::post('/video/videoDelete', 'VideoController@videoDelete')->middleware('auth');
+//公開範囲の設定
+Route::post('/video/{id}/display','VideoController@displayEdit')->middleware('auth');
 //コメントの追加
 Route::post('/category/commentCreate', 'CommentController@commentAdd')->middleware('auth');
 //コメントの削除
 Route::post('/category/commentDelete', 'CommentController@commentDelete')->middleware('auth');
 //ユーザーデータの編集画面の表示
 Route::get("/edit/{id}",'UserController@edit');
+//ユーザーの投稿データ一覧の表示
+Route::get("/video/{id}",'UserController@postVideo');
 //ユーザーデータの編集
 Route::post("/update",'UserController@update');
 
