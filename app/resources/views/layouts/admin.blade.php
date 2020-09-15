@@ -49,6 +49,9 @@
                                 <a class="dropdown-item" href="{{ url("edit".'/'.Auth::user()->id) }}">
                                     {{ __('登録情報の編集') }}
                                 </a>
+                                <a class="dropdown-item" href="{{ url("video".'/'.Auth::user()->id) }}">
+                                    {{ __('投稿動画の管理') }}
+                                </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                              document.getElementById('logout-form').submit();">
