@@ -17,8 +17,8 @@
         <div class="user-item">
             <label for="role">権限：{{$item->role}}</label>
             <select id="role" name="role">
-                <option value="admin">管理者</option>
-                <option value="general">一般</option>
+                <option value="admin">admin</option>
+                <option value="general"general</option>
             </select>
         </div>
         @csrf

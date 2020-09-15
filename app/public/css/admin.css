@@ -165,7 +165,7 @@ img {
 }
 
 .user-box {
-    background-color: #d3d3e7;
+    background-color: #eae6de;
     margin: 15px;
     width: 300px;
     height: 220px;
@@ -186,6 +186,13 @@ img {
 }
 
 .user-box label {
+
+    list-style: none;
+    font-size: 16px;
+    margin: 15px 0 0 30px;
+}
+
+.user-box select {
 
     list-style: none;
     font-size: 16px;

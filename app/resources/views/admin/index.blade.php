@@ -8,8 +8,12 @@
             <p>ＩＤ：{{$item->id}}</p>
             <p>名前：{{$item->name}}</p>
             <form method="post" action={{"/admin/edit/$item->id"}}>
-                <label for="school">学校：{{$item->school}}</label>
-                <input id="school" type="text" name="school">
+                <label for="school">学校：@if($item->school == null)未設定@else{{$school[$item->school-1]->name}}@endif</label>
+                <select id="school" name="school">
+                    @foreach($school as $schoolItem)
+                        <option value="{{$schoolItem->id}}">{{$schoolItem->name}}</option>
+                    @endforeach
+                </select>
                 <label for="role">権限：{{$item->role}}</label>
                 <select id="role" name="role">
                     <option value="admin">admin</option>
