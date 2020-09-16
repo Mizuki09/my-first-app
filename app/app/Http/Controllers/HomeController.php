@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Http\Request;
 use App\Video;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -36,10 +37,26 @@ class HomeController extends Controller
             ['sports' , 'スポーツ' ,'4'],
             ['travel' , '旅行' ,'5']
         ];
-//        カテゴリ毎に一番投稿時間の新しいものをTOPに表示させる
-        foreach ($category as $item) {
-            $response[] = Video::TopEqual("$item[0]")->get()->sortbyDesc('created_at')->first();
+        $user = Auth::user();
+
+        if ($user == null) {
+            foreach ($category as $item) {
+                $response[] = Video::TopEqual($item[0])->where('display','open')->orderBy('created_at','DESC')->first();
+            }
+        }else{
+//            全体公開になっている動画＋自分と同じschoolの人が投稿したものも見れる
+            $sameSchool = User::where('school',$user->school)->get();
+            foreach ($sameSchool as $item) {
+                $sameNum[] = $item->id;
+            }
+            foreach ($category as $item) {
+                $response[] = Video::Limited($item[0],$sameNum)->orderBy('created_at','DESC')->first();
+            }
         }
+//        foreach ($category as $item) {
+//            $response[] = Video::TopEqual($item[0])->where('display','open')->orderBy('created_at','DESC')->first();
+//        }
+
 
         return view('index' , compact('response' , 'category'));
     }
