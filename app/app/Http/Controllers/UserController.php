@@ -30,7 +30,7 @@ class UserController extends Controller
         $item = User::find($id);
         $this->authorize('update',$item);
         $comments = Comment::all()->sortByDesc('created_at');
-        $video = Video::where('user_id',$id)->get()->sortByDesc('created_at');
+        $video = Video::IdSearch($id)->get()->sortByDesc('created_at');
         return view('post',compact('video','comments'));
     }
 }

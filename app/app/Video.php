@@ -16,4 +16,14 @@ class Video extends Model
         return $query->where('category',$category);
 
     }
+
+    public function scopeIdSearch($query,$id) {
+
+        return $query->where('user_id',$id);
+    }
+
+    public function scopeVideoSearch($query,$id) {
+
+        return $query->where('id',$id);
+    }
 }
