@@ -11,7 +11,8 @@ class AdminController extends Controller
     public function index() {
         $school = School::all();
         $items = User::paginate(20);
-        return view('admin/index',compact('items','school'));
+        $page = 1;
+        return view('admin/index',compact('items','school','page'));
 
     }
 //    ユーザーデータの個別表示
@@ -30,5 +31,21 @@ class AdminController extends Controller
             'school'=>$request->school,
         ]);
         return redirect('/admin');
+    }
+//    ユーザーデータの検索
+    public function searchSchool(Request $request) {
+
+        $items = User::where('school',$request->school)->get();
+
+        $school = School::all();
+        return view('/admin/index',compact('items','school'));
+    }
+
+    public function searchRole(Request $request) {
+
+        $items = User::where('role',$request->role)->get();
+
+        $school = School::all();
+        return view('/admin/index',compact('items','school'));
     }
 }

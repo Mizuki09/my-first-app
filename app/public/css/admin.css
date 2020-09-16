@@ -192,6 +192,19 @@ img {
     margin: 0 auto 0 auto;
 }
 
+.search-menu {
+    display: flex;
+    height: 200px;
+    width: 400px;
+    margin: 0 auto 0 auto;
+}
+
+.search-list {
+    flex: 1;
+    margin: 40px;
+
+}
+
 .user-item {
     text-align: center;
     margin-right: 20px;

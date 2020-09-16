@@ -42,6 +42,10 @@ Route::group(['middleware'=>['auth','can:admin']],function (){
     Route::get("/admin/{id}",'AdminController@edit');
 //    ユーザーデータ編集送信
     Route::post("/admin/edit/{id}",'AdminController@update');
+//    ユーザーを検索(学校)
+    Route::post('/search/school','AdminController@searchSchool');
+//    ユーザーを検索(権限)
+    Route::post('/search/role','AdminController@searchRole');
 });
 
 
