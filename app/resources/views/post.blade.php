@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'TOP')
+@section('title', '動画の管理')
 
 @section('content')
     @foreach($video as $item)
