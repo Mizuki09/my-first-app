@@ -17,7 +17,7 @@ class Video extends Model
 
     }
 //    該当しない動画を省く カテゴリー別
-    public function scopeLimited($query,$category,$sameNum) {
+    public function scopeLimited($query,$category,$Num) {
 
 //        return $query->where('category',$category)->where('display','open')->orwhere('display','limited')->where('user_id',implode(",",$sameNum));
         return $query->where([
@@ -26,7 +26,7 @@ class Video extends Model
         ])->orwhere([
             ['category',$category],
             ['display','limited'],
-            ['user_id',[implode(",",$sameNum)]]
+            ['user_id',$Num]
         ]);
     }
 

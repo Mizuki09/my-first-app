@@ -46,12 +46,14 @@
             <form method="post" action={{"/admin/edit/$item->id"}}>
                 <label for="school">学校：@if($item->school == null)未設定@else{{$school[$item->school-1]->name}}@endif</label>
                 <select id="school" name="school">
+                    <option value=null>未設定</option>
                     @foreach($school as $schoolItem)
                         <option value="{{$schoolItem->id}}">{{$schoolItem->name}}</option>
                     @endforeach
                 </select>
                 <label for="role">権限：{{$item->role}}</label>
                 <select id="role" name="role">
+                    <option value=null>未設定</option>
                     <option value="admin">admin</option>
                     <option value="general">general</option>
                 </select>

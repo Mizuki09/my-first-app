@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class AppController extends Controller
 {
     public function  index($category) {
+
 //        動画をカテゴリーごとに取得
 //      $videoItems = Video::where('category' , $category)->get()->sortByDesc('created_at');
 
@@ -21,11 +22,8 @@ class AppController extends Controller
             $videoItems = Video::TopEqual($category)->where('display','open')->orderBy('created_at','DESC')->paginate(5);
         }else{
 //            全体公開になっている動画＋自分と同じschoolの人が投稿したものも見れる
-            $sameSchool = User::where('school',$user->school)->get();
-            foreach ($sameSchool as $item) {
-                $sameNum[] = $item->id;
-            }
-            $videoItems = Video::Limited($category,$sameNum)->orderBy('created_at','DESC')->paginate(5);
+            $Num = $user->school;
+            $videoItems = Video::Limited($category,$Num)->orderBy('created_at','DESC')->paginate(5);
         }
 //        コメントを動画ごとに取得
         $commentItems = Comment::all()->sortByDesc('created_at');

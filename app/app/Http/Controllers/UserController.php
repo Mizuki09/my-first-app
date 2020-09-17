@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Comment;
+use App\School;
 use App\User;
 use App\Video;
 use Illuminate\Http\Request;
@@ -9,10 +10,11 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function edit($id) {
+        $school = School::all();
 //        ユーザーデータ編集画面の表示
         $item = User::find($id);
         $this->authorize('update',$item);
-        return  view('edit',compact('item'));
+        return  view('edit',compact('item','school'));
 
     }
 
@@ -20,6 +22,7 @@ class UserController extends Controller
 //        ユーザーデータの変更
         User::find($request->id)->update([
             'name'=>$request->name,
+            'school'=>$request->school,
             'email'=>$request->email,
             'password'=>$request->password
         ]);
