@@ -17,8 +17,7 @@ class UsersTableSeeder extends Seeder
                     'name' => "${i}さん",
                     'password' => "${i}guestguest",
                     'email' => "${i}guest@guest.com",
-                    'school'=>rand(0,25),
-//                    'role'=>'general',
+                    'school'=>rand(1,24),
                     'created_at' => "2020" . '/' . "08" . '/' .  sprintf("%02d", strval(rand(20 , 30))) . ' ' . strval(rand(1 , 23)) . ':' . sprintf("%02d", strval(rand(1 , 59))) . ':' . sprintf("%02d", strval(rand(1 , 59))),
 
                 ],

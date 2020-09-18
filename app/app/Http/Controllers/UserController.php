@@ -20,12 +20,23 @@ class UserController extends Controller
 
     public function update(Request $request) {
 //        ユーザーデータの変更
-        User::find($request->id)->update([
-            'name'=>$request->name,
-            'school'=>$request->school,
-            'email'=>$request->email,
-            'password'=>$request->password
-        ]);
+        if($request->school == "null"){
+            User::find($request->id)->update([
+                'name'=>$request->name,
+                'school'=>null,
+                'email'=>$request->email,
+                'password'=>$request->password
+            ]);
+        }else{
+            User::find($request->id)->update([
+                'name'=>$request->name,
+                'school'=>$request->school,
+                'email'=>$request->email,
+                'password'=>$request->password
+            ]);
+        }
+
+
         return redirect('/');
     }
 

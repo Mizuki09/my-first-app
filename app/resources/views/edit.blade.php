@@ -58,7 +58,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="school" class="col-md-4 col-form-label text-md-right">{{ __('学校登録') }}<span id="schoolInput">：{{$school[$item->school-1]->name}}</span></label>
+                            <label for="school" class="col-md-4 col-form-label text-md-right">{{ __('学校') }}<span id="schoolInput">：@if($item->school == null)未設定@else{{$school[$item->school-1]->name}}@endif</span></label>
                             <div class="col-md-6">
                                 <select name="school" id="school">
                                     <option value=null>未設定</option>

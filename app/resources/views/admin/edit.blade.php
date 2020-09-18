@@ -11,7 +11,7 @@
             名前：<span>{{$item->name}}</span>
         </div>
         <div class="user-item">
-            <label for="school">学校：@if($item->school == null)未設定@else{{$school[$item->school-1]->name}}@endif</label>
+            <label for="school">学校：@if(is_numeric($item->school)){{$school[$item->school-1]->name}}@else未設定@endif</label>
             <select id="school" name="school">
                 <option value=null>未設定</option>
                 @foreach($school as $schoolItem)
@@ -22,9 +22,8 @@
         <div class="user-item">
             <label for="role">権限：{{$item->role}}</label>
             <select id="role" name="role">
-                <option value=null>未設定</option>
-                <option value="admin">admin</option>
                 <option value="general">general</option>
+                <option value="admin">admin</option>
             </select>
         </div>
         @csrf

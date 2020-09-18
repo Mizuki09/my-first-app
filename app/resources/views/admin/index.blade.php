@@ -51,11 +51,10 @@
                         <option value="{{$schoolItem->id}}">{{$schoolItem->name}}</option>
                     @endforeach
                 </select>
-                <label for="role">権限：{{$item->role}}</label>
+                <label for="role">権限：@if($item->role == null)未設定@else{{$item->role}}@endif</label>
                 <select id="role" name="role">
-                    <option value=null>未設定</option>
-                    <option value="admin">admin</option>
                     <option value="general">general</option>
+                    <option value="admin">admin</option>
                 </select>
                 <div class="user-item">
                     <button type="submit" class="btn btn-primary">
