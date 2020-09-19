@@ -19,15 +19,14 @@ class Video extends Model
 //    該当しない動画を省く カテゴリー別
     public function scopeLimited($query,$category,$Num) {
 
-//        return $query->where('category',$category)->where('display','open')->orwhere('display','limited')->where('user_id',implode(",",$sameNum));
-        return $query->where([
-            ['category',$category],
-            ['display','open']
-        ])->orwhere([
-            ['category',$category],
-            ['display','limited'],
-            ['user_id',$Num]
-        ]);
+        return $query->where('category',$category)->where('display','open')->orwhere('display','limited')->where('category',$category)->whereIn('user_id',$Num);
+//        return $query->where([
+//            ['category',$category],
+//            ['display','open']
+//        ])->orwhere([
+//            ['category',$category],
+//            ['display','limited'],
+//        ]);
     }
 
     public function scopeIdSearch($query,$id) {
