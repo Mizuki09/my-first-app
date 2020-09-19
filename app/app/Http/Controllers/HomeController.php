@@ -44,13 +44,11 @@ class HomeController extends Controller
                 $response[] = Video::TopEqual($item[0])->where('display','open')->orderBy('created_at','DESC')->first();
             }
         }else{
-//            全体公開になっている動画＋自分と同じschoolの人が投稿したものも見れる
-            $sameSchool = User::where('school',$user->school)->get();
-            foreach ($sameSchool as $item) {
-                $sameNum[] = $item->id;
-            }
+//            Numには同じスクールの人のidを格納
+            $Num = User::where('school',$user->school)->get('id');
+            //            全体公開になっている動画＋自分と同じschoolの人が投稿したものも見れる
             foreach ($category as $item) {
-                $response[] = Video::Limited($item[0],$sameNum)->orderBy('created_at','DESC')->first();
+                $response[] = Video::Limited($item[0],$Num)->orderBy('created_at','DESC')->first();
             }
         }
 //        foreach ($category as $item) {

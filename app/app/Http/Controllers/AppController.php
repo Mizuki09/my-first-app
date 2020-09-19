@@ -22,7 +22,7 @@ class AppController extends Controller
             $videoItems = Video::TopEqual($category)->where('display','open')->orderBy('created_at','DESC')->paginate(5);
         }else{
 //            全体公開になっている動画＋自分と同じschoolの人が投稿したものも見れる
-            $Num = $user->school;
+            $Num = User::where('school',$user->school)->get('id');
             $videoItems = Video::Limited($category,$Num)->orderBy('created_at','DESC')->paginate(5);
         }
 //        コメントを動画ごとに取得
