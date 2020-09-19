@@ -20,7 +20,7 @@
                 @endforeach
             </div>
             <div class="limited">
-                <p>現在の設定：{{$item->display}}</p>
+                <p>現在の設定：{{__("messages.$item->display")}}</p>
                 <form method="post" action="{{Auth::user()->id}}/display">
                     <input type="hidden" name="video_id" value="{{$item->id}}">
                     <label for="display">公開範囲</label>
