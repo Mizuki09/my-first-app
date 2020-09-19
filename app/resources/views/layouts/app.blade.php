@@ -46,6 +46,11 @@
                                     </a>
 
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        @if(Auth::user()->role == "admin")
+                                            <a class="dropdown-item" href="{{ url("admin") }}">
+                                                {{ __('ユーザー管理') }}
+                                            </a>
+                                        @endif
                                         <a class="dropdown-item" href="{{ url("edit".'/'.Auth::user()->id) }}">
                                             {{ __('登録情報の編集') }}
                                         </a>
