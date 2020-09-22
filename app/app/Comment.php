@@ -10,8 +10,8 @@ class Comment extends Model
     protected $table = 'comments';
     protected $primaryKey = 'id';
 
-    public function scopeCommentSearch($query,$id) {
-
+    public function scopeCommentSearch(Builder $query,$id) : Builder
+    {
         return $query->where('video_id',$id);
     }
 }

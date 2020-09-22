@@ -11,9 +11,9 @@
             名前：<span>{{$item->name}}</span>
         </div>
         <div class="user-item">
-            <label for="school">学校：@if(is_numeric($item->school)){{$school[$item->school-1]->name}}@else未設定@endif</label>
+            <label for="school">学校：@if(is_null($item->school)){{$school[$item->school-1]->name}}@else未設定@endif</label>
             <select id="school" name="school">
-                <option value=null>未設定</option>
+                <option value="">未設定</option>
                 @foreach($school as $schoolItem)
                     <option value="{{$schoolItem->id}}">{{$schoolItem->name}}</option>
                 @endforeach

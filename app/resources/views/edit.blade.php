@@ -58,10 +58,10 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="school" class="col-md-4 col-form-label text-md-right">{{ __('学校') }}<span id="schoolInput">：@if($item->school == null)未設定@else{{$school[$item->school-1]->name}}@endif</span></label>
+                            <label for="school" class="col-md-4 col-form-label text-md-right">{{ __('学校') }}<span id="schoolInput">：@if(is_null($item->school))未設定@else{{$school[$item->school-1]->name}}@endif</span></label>
                             <div class="col-md-6">
                                 <select name="school" id="school">
-                                    <option value=null>未設定</option>
+                                    <option value="">未設定</option>
                                     @foreach($school as $item)
                                         <option value="{{$item->id}}">{{$item->name}}</option>
                                     @endforeach

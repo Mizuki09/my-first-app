@@ -8,7 +8,7 @@
                 <div>
                     <label for="school">学校</label>
                     <select id="school" name="school">
-                        <option value=null>未設定</option>
+                        <option value="">未設定</option>
                         @foreach($school as $schoolItem)
                             <option value="{{$schoolItem->id}}">{{$schoolItem->name}}</option>
                         @endforeach
@@ -25,7 +25,7 @@
                 <div>
                     <label for="role">権限</label>
                     <select id="role" name="role">
-                        <option value=null>未設定</option>
+                        <option value="">未設定</option>
                         <option value="admin">admin</option>
                         <option value="general">general</option>
                     </select>
@@ -44,14 +44,14 @@
             <p>ＩＤ：{{$item->id}}</p>
             <p>名前：{{$item->name}}</p>
             <form method="post" action={{"/admin/edit/$item->id"}}>
-                <label for="school">学校：@if($item->school == null)未設定@else{{$school[$item->school-1]->name}}@endif</label>
+                <label for="school">学校：@if(is_null($item->school))未設定@else{{$school[$item->school-1]->name}}@endif</label>
                 <select id="school" name="school">
                     <option value=null>未設定</option>
                     @foreach($school as $schoolItem)
                         <option value="{{$schoolItem->id}}">{{$schoolItem->name}}</option>
                     @endforeach
                 </select>
-                <label for="role">権限：@if($item->role == null)未設定@else{{$item->role}}@endif</label>
+                <label for="role">権限：@if(is_null($item->role))未設定@else{{$item->role}}@endif</label>
                 <select id="role" name="role">
                     <option value="general">general</option>
                     <option value="admin">admin</option>
@@ -67,10 +67,10 @@
     @endforeach
     </div>
     @if(isset($page))
-    <div class="paging-system">
-        {{$items->links()}}
-    </div>
-    @else
+        <div class="paging-system">
+            {{$items->links()}}
+        </div>
+        @else
     @endif
 @endsection
 

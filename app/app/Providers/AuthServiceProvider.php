@@ -15,9 +15,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-
         user::class => UserPolicy::class,
-
     ];
 
     /**

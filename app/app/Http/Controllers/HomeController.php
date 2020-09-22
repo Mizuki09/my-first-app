@@ -10,23 +10,10 @@ use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-//    public function __construct()
-//    {
-//        $this->middleware('auth');
-//    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return Renderable
-     * @throws GuzzleException
+     * TOP画面の動画の表示
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
-
     {
         $category = [
 //          カテゴリ名、タイトル、該当動画番号
@@ -43,7 +30,7 @@ class HomeController extends Controller
             foreach ($category as $item) {
                 $response[] = Video::TopEqual($item[0])->where('display','open')->orderBy('created_at','DESC')->first();
             }
-        }else{
+        }else {
 //            Numには同じスクールの人のidを格納
             $Num = User::where('school',$user->school)->get('id');
             //            全体公開になっている動画＋自分と同じschoolの人が投稿したものも見れる
@@ -51,11 +38,6 @@ class HomeController extends Controller
                 $response[] = Video::Limited($item[0],$Num)->orderBy('created_at','DESC')->first();
             }
         }
-//        foreach ($category as $item) {
-//            $response[] = Video::TopEqual($item[0])->where('display','open')->orderBy('created_at','DESC')->first();
-//        }
-
-
         return view('index' , compact('response' , 'category'));
     }
 }

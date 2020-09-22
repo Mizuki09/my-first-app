@@ -53,11 +53,5 @@ Route::group(['middleware'=>['auth','can:admin']],function (){
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('/');
-//
-//Auth::routes();
-//
-//Route::get('/', 'HomeController@index')->name('/');
-//
-//Auth::routes();
-//
-//Route::get('/', 'HomeController@index')->name('/');
+
+
