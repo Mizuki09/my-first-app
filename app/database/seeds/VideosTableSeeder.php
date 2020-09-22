@@ -43,12 +43,14 @@ class VideosTableSeeder extends Seeder
             ['https://www.youtube.com/watch?v=ZvkTJudx5-g' , 'game'],
             ['https://www.youtube.com/watch?v=0IuM6yBr72U' , 'game'],
         ];
+        $display = array("open","limited");
         foreach ($videos as $video) {
             DB::table('videos')->insert([
                 [
                     'user_id' => rand(1 , 6),
                     'url' => $video[0],
                     'category' => "$video[1]",
+                    'display'=>$display[rand(0,1)],
                     'created_at' => "2020" . '/' . "08" . '/' .  sprintf("%02d", strval(rand(20 , 30))) . ' ' . strval(rand(1 , 23)) . ':' . sprintf("%02d", strval(rand(1 , 59))) . ':' . sprintf("%02d", strval(rand(1 , 59))),
                 ],
             ]);

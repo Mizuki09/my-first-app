@@ -15,9 +15,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-
         user::class => UserPolicy::class,
-
     ];
 
     /**
@@ -28,7 +26,9 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-
-        //
+//        adminのみ許可
+        Gate::define('admin',function ($user){
+            return ($user->role == 'admin');
+        });
     }
 }
