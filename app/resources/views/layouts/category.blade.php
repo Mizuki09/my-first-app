@@ -46,6 +46,12 @@
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ url("edit".'/'.Auth::user()->id) }}">
+                                    {{ __('登録情報の編集') }}
+                                </a>
+                                <a class="dropdown-item" href="{{ url("video".'/'.Auth::user()->id) }}">
+                                    {{ __('投稿動画の管理') }}
+                                </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                              document.getElementById('logout-form').submit();">
@@ -74,6 +80,7 @@
                     <label for="text">動画を探して投稿</label>
                     <input type="hidden" name="category" value="@yield('category')">
                     <input type="hidden" name="categoryId" value="@yield('categoryNum')">
+                    <input type="hidden" name="display" value="open">
                     <input type="text" name="keyword" placeholder="キーワード" >
                     {{--            ログインしていない場合--}}
                     @guest
@@ -108,6 +115,11 @@
                     <input type="hidden" name="category" value="@yield('category')">
                     <input type="submit" name="foo" value="投稿">
                     @csrf
+                    <label for="limited">公開範囲</label>
+                    <select id="limited" name="display">
+                        <option value="open">全体公開</option>
+                        <option value="limited">スクール限定</option>
+                    </select>
                 </form>
                 {{--        注意文--}}
                 <span id="url-warning">※</span>XXXXXXXXXを動画IDに変更してください

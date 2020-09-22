@@ -97,6 +97,19 @@ img {
   background-color: #eff6fc;
 }
 
+.main-aria3 {
+    display: flex;
+    margin: 15em auto 0 auto;
+    width: 80%;
+    height: 315px;
+    background-color: #eff6fc;
+}
+
+.delete-button2 {
+    width: 80%;
+    margin: 0 auto 0 auto;
+}
+
 .video-delete {
   width: 80%;
   margin: 0 auto 0 auto;
@@ -156,4 +169,63 @@ img {
 
 .delete-comment {
   float: right;
+}
+
+.user-box p {
+    margin: 15px 0 0 30px;
+    list-style: none;
+    font-size: 16px;
+}
+
+.user-box {
+    background-color: #eae6de;
+    margin: 15px;
+    width: 300px;
+    height: 220px;
+
+}
+
+.user-flex {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto 0 auto;
+}
+
+.search-menu {
+    display: flex;
+    height: 200px;
+    width: 400px;
+    margin: 0 auto 0 auto;
+}
+
+.search-list {
+    flex: 1;
+    margin: 40px;
+
+}
+
+.user-item {
+    text-align: center;
+    margin-right: 20px;
+
+}
+
+.user-box label {
+
+    list-style: none;
+    font-size: 16px;
+    margin: 15px 0 0 30px;
+}
+
+.user-box select {
+
+    list-style: none;
+    font-size: 16px;
+    margin: 15px 0 0 30px;
+}
+
+.user-edit {
+    width: 400px;
+    margin: 200px auto 0 auto;
 }

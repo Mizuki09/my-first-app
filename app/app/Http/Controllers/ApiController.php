@@ -8,15 +8,19 @@ use Google_Service_YouTube;
 
 class ApiController extends Controller
 {
-    //    APIを使って動画を追加
-    public function apiVideo(ApiRequest $request) {
-//        APIキー
+    /**
+     * google youtube APIを使用
+     * 動画の自動検索
+     * @param ApiRequest $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function apiVideo(ApiRequest $request)
+    {
         $DEVELOPER_KEY = config('database.apiKey');
-
         $client = new Google_Client();
         $client->setDeveloperKey($DEVELOPER_KEY);
         $youtube = new Google_Service_YouTube($client);
-//        動画の検索
+
         $response = $youtube->search->listSearch('id,snippet', array
         (
             //検索方法指定　qはキーワード、orderは新着や再生回数順
