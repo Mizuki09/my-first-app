@@ -19,7 +19,7 @@ class AppController extends Controller
 //        ユーザー情報を取得
         $user = Auth::user();
 //        userに何も入っていない場合(ログインしていない場合)
-        if ($user === null) {
+        if (is_null($user)) {
 //            全体公開になっている(open)動画のみを表示させる
             $videoItems = Video::TopEqual($category)
                 ->where('display','open')->orderBy('created_at','DESC')

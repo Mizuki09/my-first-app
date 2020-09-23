@@ -37,7 +37,6 @@
             </form>
         </div>
     </div>
-
     <div class="user-flex">
     @foreach($items as $item)
         <div class="user-box">

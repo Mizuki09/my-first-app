@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('title', '動画の管理')
-
 @section('content')
     @foreach($video as $item)
         <div class="main-aria3">
@@ -41,7 +40,6 @@
                 @csrf
             </form>
         </div>
-
     @endforeach
 @endsection
 

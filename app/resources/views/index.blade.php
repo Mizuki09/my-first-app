@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('title', 'TOP')
-
 @section('content')
     <div class="flex-container">
         @foreach($category as $item)
@@ -20,4 +19,3 @@
             </div>
         @endforeach
 @endsection
-

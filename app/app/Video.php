@@ -11,7 +11,7 @@ class Video extends Model
     protected $primaryKey = 'id';
 
 //    カテゴリー毎の動画を取得
-    public function scopeTopEqual(Builder $query, $category): Builder
+    public function scopeTopEqual($query, $category)
     {
         return $query->where('category', $category);
     }
@@ -25,12 +25,12 @@ class Video extends Model
             ->whereIn('user_id', $Num);
     }
 
-    public function scopeIdSearch(Builder $query, $id): Builder
+    public function scopeIdSearch($query, $id)
     {
         return $query->where('user_id', $id);
     }
 
-    public function scopeVideoSearch(Builder $query, $id): Builder
+    public function scopeVideoSearch($query, $id)
     {
         return $query->where('id', $id);
     }
