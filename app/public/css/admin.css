@@ -229,3 +229,9 @@ img {
     width: 400px;
     margin: 200px auto 0 auto;
 }
+
+#school-regist {
+    text-align: center;
+    color: #ff6969;
+    font-weight: bold;
+}
