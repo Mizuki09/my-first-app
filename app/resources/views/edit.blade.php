@@ -63,7 +63,7 @@
                                 </select>
                             </div>
                         </div>
-
+                        <p id="school-regist">※学校を設定することによって同じ学校の方が登録している動画を追加表示します</p>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
