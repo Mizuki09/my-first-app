@@ -14,7 +14,7 @@ class VideoController extends Controller
      * @param VideoRequest $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function videoAdd( VideoRequest $request)
+    public function videoAdd(VideoRequest $request)
     {
         Video::create($request->all());
         $category = $request->category;
@@ -26,7 +26,7 @@ class VideoController extends Controller
      * @param Request $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function videodelete( Request $request)
+    public function videodelete(Request $request)
     {
         Comment::CommentSearch($request->video_id)->delete();
         Video::VideoSearch("$request->video_id")->delete();

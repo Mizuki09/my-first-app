@@ -33,7 +33,6 @@ class AppController extends Controller
         }
 //        コメントを動画ごとに取得
         $commentItems = Comment::all()->sortByDesc('created_at');
-
         return view("category/$category" , compact('videoItems' , 'commentItems'));
 
     }
