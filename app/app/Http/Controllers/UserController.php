@@ -29,7 +29,7 @@ class UserController extends Controller
      */
     public function update(Request $request)
     {
-        if(is_null($request->school)) {
+        if (is_null($request->school)) {
             User::find($request->id)->update([
                 'name'=>$request->name,
                 'school'=>null,
