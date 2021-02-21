@@ -33,7 +33,6 @@ Route::get("/video/{id}",'UserController@postVideo');
 //ユーザーデータの編集
 Route::post("/update",'UserController@update');
 
-
 //管理者のみ利用可能
 Route::group(['middleware'=>['auth','can:admin']],function (){
 //    管理者画面

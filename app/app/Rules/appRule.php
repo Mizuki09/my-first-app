@@ -25,7 +25,9 @@ class appRule implements Rule
      */
     public function passes($attribute, $value)
     {
-        return preg_match('https://www.youtube.com/watch?v=' , $value);
+        $matchUrl = "https://www.youtube.com/watch?v=";
+//        dd($matchUrl);
+        return strpos($matchUrl, $value);
     }
 
     /**
