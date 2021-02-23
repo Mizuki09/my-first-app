@@ -26,16 +26,16 @@ class HomeController extends Controller
         ];
         $user = Auth::user();
 
-        if ($user == null) {
+        if (is_null($user)) {
             foreach ($category as $item) {
-                $response[] = Video::TopEqual($item[0])->where('display','open')->orderBy('created_at','DESC')->first();
+                $response[] = Video::TopEqual($item[0])->first();;
             }
-        }else {
+        } else {
 //            Numには同じスクールの人のidを格納
             $Num = User::where('school',$user->school)->get('id');
             //            全体公開になっている動画＋自分と同じschoolの人が投稿したものも見れる
             foreach ($category as $item) {
-                $response[] = Video::Limited($item[0],$Num)->orderBy('created_at','DESC')->first();
+                $response[] = Video::Limited($item[0],$Num)->first();
             }
         }
         return view('index' , compact('response' , 'category'));
