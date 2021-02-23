@@ -15,30 +15,24 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $category = [
-//          カテゴリ名、タイトル、該当動画番号
-            ['animal' , '動物' ,'0'],
-            ['cooking' , '料理' ,'1'],
-            ['game' , 'ゲーム' ,'2'],
-            ['music' , '音楽' ,'3'],
-            ['sports' , 'スポーツ' ,'4'],
-            ['travel' , '旅行' ,'5']
-        ];
+//        カテゴリー情報
+        $categoryList = config('const.category');
+//        ユーザー情報
         $user = Auth::user();
 
-        if ($user == null) {
-            foreach ($category as $item) {
-                $response[] = Video::TopEqual($item[0])->where('display','open')->orderBy('created_at','DESC')->first();
+        if (is_null($user)) {
+            foreach ($categoryList as $item) {
+                $response[] = Video::TopEqual($item[0])->first();;
             }
-        }else {
+        } else {
 //            Numには同じスクールの人のidを格納
             $Num = User::where('school',$user->school)->get('id');
             //            全体公開になっている動画＋自分と同じschoolの人が投稿したものも見れる
-            foreach ($category as $item) {
-                $response[] = Video::Limited($item[0],$Num)->orderBy('created_at','DESC')->first();
+            foreach ($categoryList as $item) {
+                $response[] = Video::Limited($item[0],$Num)->first();
             }
         }
-        return view('index' , compact('response' , 'category'));
+        return view('index' , compact('response' , 'categoryList'));
     }
 }
 

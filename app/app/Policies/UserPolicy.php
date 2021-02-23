@@ -52,7 +52,7 @@ class UserPolicy
      */
     public function update(User $user, $id)
     {
-        return $user->id == "$id->id";
+        return $user->id === $id->id;
     }
 
     /**

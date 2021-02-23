@@ -13,7 +13,11 @@ class Video extends Model
 //    カテゴリー毎の動画を取得
     public function scopeTopEqual($query, $category)
     {
-        return $query->where('category', $category);
+        return $query
+            ->where('category', $category)
+            ->where('display','open')
+            ->orderBy('created_at','DESC');
+
     }
 //    該当しない動画を省く カテゴリー別
     public function scopeLimited($query, $category, $Num)
@@ -22,7 +26,8 @@ class Video extends Model
             ->where('display', 'open')
             ->orwhere('display', 'limited')
             ->where('category', $category)
-            ->whereIn('user_id', $Num);
+            ->whereIn('user_id', $Num)
+            ->orderBy('created_at','DESC');
     }
 
     public function scopeIdSearch($query, $id)

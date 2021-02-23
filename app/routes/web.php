@@ -12,7 +12,7 @@
 */
 
 //カテゴリ別の動画一覧
-Route::get('/category/{category}', 'AppController@index');
+Route::get('{category}', 'AppController@index');
 //APIを使った動画の追加
 Route::post('/category/apiCreate', 'ApiController@apiVideo')->middleware('auth');
 //動画の投稿
