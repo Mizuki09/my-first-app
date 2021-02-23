@@ -16,6 +16,11 @@ class AppController extends Controller
      */
     public function  index($category)
     {
+//        カテゴリー情報
+        $categoryList = config('const.category');
+        $categoryNum = array_search($category, array_column($categoryList, 0));
+        $list = $categoryList[$categoryNum];
+
 //        ユーザー情報を取得
         $user = Auth::user();
 //        userに何も入っていない場合(ログインしていない場合)
@@ -33,7 +38,7 @@ class AppController extends Controller
         }
 //        コメントを動画ごとに取得
         $commentItems = Comment::all()->sortByDesc('created_at');
-        return view("category/$category" , compact('videoItems' , 'commentItems'));
+        return view("/list" , compact('videoItems', 'commentItems', 'list'));
 
     }
 }
