@@ -11,7 +11,7 @@ class CommentController extends Controller
      * @param CommentRequest $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function  commentAdd( CommentRequest $request)
+    public function  commentAdd(CommentRequest $request)
     {
         Comment::create($request->all());
         $category = $request->category;
@@ -24,7 +24,7 @@ class CommentController extends Controller
      * @param Request $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function commentdelete( Request $request)
+    public function commentdelete(Request $request)
     {
 //        該当動画レコードを削除
         Comment::where('id',$request->comment_id)->delete();
