@@ -17,9 +17,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $school = School::all();
         $item = User::find($id);
         $this->authorize('update',$item);
+        $school = School::all();
         return  view('edit',compact('item','school'));
     }
     /**
