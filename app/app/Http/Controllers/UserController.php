@@ -36,7 +36,7 @@ class UserController extends Controller
                 'email'=>$request->email,
                 'password'=>$request->password
             ]);
-        }else{
+        } else {
             User::find($request->id)->update([
                 'name'=>$request->name,
                 'school'=>$request->school,

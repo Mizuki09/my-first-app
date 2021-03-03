@@ -26,7 +26,7 @@ class VideoController extends Controller
      * @param Request $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function videodelete(Request $request)
+    public function videoDelete(Request $request)
     {
         Comment::CommentSearch($request->video_id)->delete();
         Video::VideoSearch("$request->video_id")->delete();

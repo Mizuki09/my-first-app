@@ -71,7 +71,7 @@
                 <form method="post" action="apiCreate">
                     <label for="text">動画を探して投稿</label>
                     <input type="hidden" name="category" value={{$list[0]}}>
-                    <input type="hidden" name="categoryId" value={{$list[2]}}>
+                    <input type="hidden" name="categoryId" value={{$list[3]}}>
                     <input type="hidden" name="display" value="open">
                     <input type="text" name="keyword" placeholder="キーワード" >
                     {{--            ログインしていない場合--}}

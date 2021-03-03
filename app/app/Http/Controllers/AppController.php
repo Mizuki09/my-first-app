@@ -27,13 +27,11 @@ class AppController extends Controller
         if (is_null($user)) {
 //            全体公開になっている(open)動画のみを表示させる
             $videoItems = Video::TopEqual($category)
-                ->where('display','open')->orderBy('created_at','DESC')
                 ->paginate(5);
-        }else {
+        } else {
 //            全体公開になっている動画＋自分と同じschoolの人が投稿したものも見れる
             $Num = User::where('school',$user->school)->get('id');
             $videoItems = Video::Limited($category,$Num)
-                ->orderBy('created_at','DESC')
                 ->paginate(5);
         }
 //        コメントを動画ごとに取得
