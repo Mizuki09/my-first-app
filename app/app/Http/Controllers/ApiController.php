@@ -32,7 +32,6 @@ class ApiController extends Controller
             'order' => $request->order,
             'safeSearch' => 'moderate',
         ));
-
         $item = $response[rand(0 , 19)]->id->videoId;
 //        該当した動画のIDを保存
         $request['url'] ='https://www.youtube.com/watch?v=' . $item;
