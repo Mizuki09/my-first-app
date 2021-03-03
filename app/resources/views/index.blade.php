@@ -4,7 +4,7 @@
     <div class="flex-container">
         @foreach($categoryList as $item)
             <div class="category">
-                <a href="{{ url($item[0]) }}">{{$item[1]}}</a>
+                <a href="{{ url("category/$item[0]") }}">{{$item[1]}}</a>
                 <div class="main-aria">
                     @if($response[$item[2]] == null)
                         <div id="sample-image">
